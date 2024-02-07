@@ -171,7 +171,6 @@
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>
@@ -266,11 +265,8 @@
                         <td>4:38</td>
                     </tr>
                 </table>
-
             </div>
         </div>
-
-
     </div>
 </div>
 <div class="player">
@@ -283,6 +279,7 @@
         <span class="material-icons like">favorite_border</span>
     </div>
     <div class="system">
+        <audio id="audioPlayer" src="audio/2Pac-Ambitionz-Az-a-Ridah.mp3"></audio>
         <div class="actions">
             <span class="material-icons">shuffle</span>
             <span class="material-icons">skip_previous</span>
@@ -291,7 +288,7 @@
             <span class="material-icons">repeat_one</span>
         </div>
         <div class="system-timer">
-            <span class="system-time">2:15</span>
+            <span class="system-time">0:00</span>
             <div class="system-range">
                 <label>
                     <input type="range">
@@ -305,12 +302,13 @@
         <span class="material-icons">mic</span>
         <span class="material-icons">subject</span>
         <span class="material-icons">devices</span>
-        <span class="material-icons">volume_up</span>
+        <span class="material-icons" id="muteBtn">volume_up</span>
         <label>
             <input type="range">
         </label>
         <span class="material-icons">fullscreen</span>
     </div>
 </div>
+<script src="script.js"></script>
 </body>
 </html>
