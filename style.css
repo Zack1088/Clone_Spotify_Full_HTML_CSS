@@ -170,12 +170,12 @@ body{
     background: rgba(255, 255, 255, .05);
 }
 .playlist > div:first-child{
-    width: 45px;
-    height: 45px;
+    width: 3.5rem;
+    height: 3.5rem;
 }
 .playlist > div > img{
     width: 100%;
-    border-radius: 50%;
+    border-radius: 20%;
 }
 .playlist a{
     text-decoration: none;
