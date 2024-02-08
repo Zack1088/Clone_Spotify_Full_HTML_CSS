@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const progressControl = document.querySelector('.system-range input[type="range"]');
     const currentTimeDisplay = document.querySelector('.system-timer .system-time:first-of-type');
     const durationDisplay = document.querySelector('.system-timer .system-time:last-of-type');
+    const muteBtn = document.getElementById('muteBtn');
 
     const playlist = [
         { title: "Titre 1", src: "audio/2Pac-Ambitionz-Az-a-Ridah.mp3" },
@@ -31,6 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         playPauseBtn.textContent = 'play_arrow';
     };
+
     playPauseBtn.addEventListener('click', () => {
         if (audioPlayer.paused) {
             audioPlayer.play();
@@ -38,6 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
             audioPlayer.pause();
         }
     });
+
     audioPlayer.addEventListener('play', () => {
         playPauseBtn.textContent = 'pause';
     });
@@ -56,6 +59,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     volumeControl.addEventListener('input', () => {
         audioPlayer.volume = volumeControl.value / 100;
+    });
+
+    muteBtn.addEventListener('click', () => {
+        audioPlayer.muted = !audioPlayer.muted;
+        if (audioPlayer.muted) {
+            muteBtn.textContent = 'volume_off';
+        } else {
+            muteBtn.textContent = 'volume_up';
+        }
     });
 
     audioPlayer.addEventListener('timeupdate', () => {
@@ -79,5 +91,6 @@ document.addEventListener('DOMContentLoaded', () => {
     audioPlayer.addEventListener('loadedmetadata', () => {
         durationDisplay.textContent = formatTime(audioPlayer.duration);
     });
+
     loadTrack(currentTrackIndex);
 });
