@@ -21,10 +21,10 @@ document.addEventListener('DOMContentLoaded', () => {
         audioPlayer.src = playlist[currentTrackIndex].src;
         audioPlayer.load();
         audioPlayer.ontimeupdate = () => {
-            const progress = (audioPlayer.currentTime / audioPlayer.duration) * 100;
-            progressControl.value = progress;
+            progressControl.value = (audioPlayer.currentTime / audioPlayer.duration) * 100;
             currentTimeDisplay.textContent = formatTime(audioPlayer.currentTime);
         };
+        
         audioPlayer.onloadedmetadata = () => {
             if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
                 navigator.mediaDevices.getUserMedia({ audio: true })
