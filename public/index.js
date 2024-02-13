@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentTrackIndex = 0;
     let playlist = [];
 
-    fetch('/data/playlist')
+    fetch('/playlist')
         .then(response => {
             if (!response.ok) {
                 throw new Error('Network response was not ok');
@@ -31,9 +31,9 @@ document.addEventListener('DOMContentLoaded', () => {
     function loadTrack(trackIndex) {
         if (playlist.length > 0 && trackIndex >= 0 && trackIndex < playlist.length) {
             const track = playlist[trackIndex];
-            audioPlayer.src = track.src; // Mettre à jour la source de l'audio player
-            document.querySelector('.single-title').innerText = track['single-title'].replace(/-/g, ' '); // Mettre à jour le titre
-            document.querySelector('.single-artist').innerText = track['single-artist']; // Mettre à jour l'artiste
+            audioPlayer.src = track.src;
+            document.querySelector('.single-title').innerText = track['single-title'].replace(/-/g, ' ');
+            document.querySelector('.single-artist').innerText = track['single-artist'];
             audioPlayer.load();
             audioPlayer.onloadeddata = () => {
                 audioPlayer.play();

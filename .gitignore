@@ -6,8 +6,8 @@
 .env.local
 .env.*.local
 # Fichiers de l'éditeur
-.vscode/
-.idea/
+/.vscode
+/.idea
 *.swp
 *.swo
 *~
